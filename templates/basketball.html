@@ -1,0 +1,51 @@
+<div id="basketball">
+  <div class="wrap">
+    <div class="row">
+        <div class="timer">
+          <input id="time" ng-model="basketball.startTime" type="text" class="time" placeholder="Enter Time 00:00" ng-value="basketball.startTime" />
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-5">
+        <input class="bold home-title"type="text" ng-model="basketball.homeName" ng-value="basketball.homeName" ng-init="basketball.homeName= !basketball.homeName ? 'Home' : basketball.homeName"/>
+        <span class="score" ng-model="basketball.homeScore" ng-init="basketball.homeScore= !basketball.homeScore ? 0 : basketball.homeScore">{{basketball.homeScore}}</span>
+      </div>
+      <div class="col-xs-2">
+        <label class="title">Period</label>
+        <input type="text" ng-model="basketball.period" ng-value="basketball.period" ng-init="basketball.period= !basketball.period ? 1 : basketball.period"/>
+      </div>
+      <div class="col-xs-5">
+        <input class="bold away-title" type="text" ng-model="basketball.awayName" ng-value="basketball.awayName" ng-init="basketball.awayName=!basketball.awayName ? 'Away' : basketball.awayName"/>
+        <span class="score" ng-model="basketball.awayScore" ng-init="basketball.awayScore= !basketball.awayScore ? 0 : basketball.awayScore">{{basketball.awayScore}}</span>
+      </div>
+    </div>
+    <div id="menu" class="row">
+      <div class="col-xs-3">
+        <span class="btn btn-lg btn-default" ng-click="score('home',-1)">-
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('home',1)">1
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('home',2)">2
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('home',3)">3
+        </span>
+      </div>
+      <div class="col-xs-6">
+        <span class="btn btn-lg btn-success" ng-click="start()">Start
+        </span>
+        <span class="btn btn-lg btn-danger" ng-click="stop()">Stop</span>
+        <span class="btn btn-lg btn-warning" ng-click="restart()">Restart</span>
+      </div>
+      <div class="col-xs-3">
+        <span class="btn btn-lg btn-default" ng-click="score('away',-1)">-
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('away',1)">1
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('away',2)">2
+        </span>
+        <span class="btn btn-lg btn-default" ng-click="score('away',3)">3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
