@@ -19,8 +19,7 @@ module.factory('basketballStorage', function () {
 
    return {
       get: function () {
-        console.log($.parseJSON(localStorage.getItem(STORAGE_ID)));
-         return $.parseJSON(localStorage.getItem(STORAGE_ID) || {});
+         return $.parseJSON(localStorage.getItem(STORAGE_ID));
       },
 
       put: function (basketball) {
@@ -47,7 +46,7 @@ module.config(['$routeProvider', function ($routeProvider) {
   }]);
 
 module.controller('ToDoCtrl', function ($scope, todoStorage) {
-   var todos = $scope.todos = todoStorage.get();
+   var todos = $scope.todos = todoStorage.get() || {};
    $scope.message = 'This is Add new order screen';
    $scope.newTodo = '';
    $scope.addTodo = function () {
