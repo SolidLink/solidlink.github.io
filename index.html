@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="scripts/vendor/jquery-1.11.2.min.js"></script>
+  </head>
+  <body ng-app="testApp">
+   <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">Apps</a>
+         </div>
+
+         <div class="collapse navbar-collapse" id="nav-toggle">
+            <ul class="nav navbar-nav pull-right">
+              <li><a href="#/">Home</a></li>
+              <li><a href="#todo">To Do</a></li>
+              <li><a href="#basketball">Basketball</a></li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <div id="top" class="container">
+      <div ng-view></div>
+   </div>
+
+
+    <script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/vendor/angular-route.min.js"></script>
+    <script type="text/javascript" src='scripts/vendor/bootstrap.min.js'></script>
+    <script type="text/javascript" src="scripts/vendor/moment.js"></script>
+    <script type="text/javascript" src="scripts/vendor/angular-moment.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>
