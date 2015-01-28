@@ -15,7 +15,7 @@ module.factory('todoStorage', function () {
    };
 });
 module.factory('basketballStorage', function () {
-   var STORAGE_ID = 'basketball-angularjs-perf';
+   var STORAGE_ID = 'basketball-local';
 
    return {
       get: function () {
