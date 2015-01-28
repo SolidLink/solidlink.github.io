@@ -6,7 +6,7 @@ module.factory('todoStorage', function () {
 
    return {
       get: function () {
-         return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+         return $.parseJSON(localStorage.getItem(STORAGE_ID) || '[]');
       },
 
       put: function (todos) {
@@ -19,7 +19,7 @@ module.factory('basketballStorage', function () {
 
    return {
       get: function () {
-         return JSON.parse(localStorage.getItem(STORAGE_ID) || {});
+         return $.parseJSON(localStorage.getItem(STORAGE_ID) || {});
       },
 
       put: function (basketball) {
