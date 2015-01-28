@@ -253,6 +253,12 @@ label[for='toggle-all'] {
 #basketball .score {
    font-size: 100px;
 }
+@media (max-width: 765px) {
+   #menu {
+      position: relative;
+      bottom: 0px;
+   }
+}
 .bold {
    font-weight: bold;
 }
