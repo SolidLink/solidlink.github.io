@@ -46,7 +46,7 @@ module.config(['$routeProvider', function ($routeProvider) {
   }]);
 
 module.controller('ToDoCtrl', function ($scope, todoStorage) {
-   var todos = $scope.todos = todoStorage.get() || {};
+   var todos = $scope.todos = todoStorage.get();
    $scope.message = 'This is Add new order screen';
    $scope.newTodo = '';
    $scope.addTodo = function () {
@@ -86,7 +86,7 @@ module.controller('ToDoCtrl', function ($scope, todoStorage) {
    };
 });
 module.controller('BasketballCtrl', function ($scope, moment, basketballStorage, $interval) {
-   var basketball = $scope.basketball = basketballStorage.get(),
+   var basketball = $scope.basketball = basketballStorage.get() || {},
     counter;
 
    $scope.error = {};
@@ -106,7 +106,6 @@ module.controller('BasketballCtrl', function ($scope, moment, basketballStorage,
             sec = time[1] ? time [1] : '00',
             now = moment({minute: min, second: sec});
           basketball.startTime = now.subtract(1, 'second').format('mm:ss');
-          console.log(basketball.startTime);
        }, 1000);
     } else {
       $scope.error.startTime = true;
