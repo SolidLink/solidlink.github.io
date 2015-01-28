@@ -19,6 +19,7 @@ module.factory('basketballStorage', function () {
 
    return {
       get: function () {
+        console.log($.parseJSON(localStorage.getItem(STORAGE_ID)));
          return $.parseJSON(localStorage.getItem(STORAGE_ID) || {});
       },
 
