@@ -100,7 +100,8 @@ module.controller('BasketballCtrl', function ($scope, moment, basketballStorage,
     if (basketball.startTime) {
       save();
       $scope.error.startTime = false;
-       counter = $interval(function() {
+      $interval.cancel(counter);
+      counter = $interval(function() {
           var time = basketball.startTime.split(':'),
             min = time[0],
             sec = time[1] ? time [1] : '00',
