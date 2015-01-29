@@ -87,8 +87,8 @@ module.controller('ToDoCtrl', function ($scope, todoStorage) {
 });
 module.controller('BasketballCtrl', function ($scope, moment, basketballStorage, $interval) {
    var basketball = $scope.basketball = basketballStorage.get() || {},
-    counter;
-
+    counter,
+    audio = new Audio('buzzer.mp3');
    $scope.error = {};
    function save() {
      basketball.variables = {
@@ -106,6 +106,15 @@ module.controller('BasketballCtrl', function ($scope, moment, basketballStorage,
             sec = time[1] ? time [1] : '00',
             now = moment({minute: min, second: sec});
           basketball.startTime = now.subtract(1, 'second').format('mm:ss');
+          if (min === '00' && sec < 30) {
+            basketball.red = true;
+          } else {
+            basketball.red = false;
+          }
+          if (basketball.startTime === '00:00') {
+            audio.play();
+            $interval.cancel(counter);
+          }
        }, 1000);
     } else {
       $scope.error.startTime = true;
@@ -113,9 +122,11 @@ module.controller('BasketballCtrl', function ($scope, moment, basketballStorage,
    };
    $scope.stop = function () {
     $interval.cancel(counter);
+    basketball.red = false;
     counter = undefined;
    };
    $scope.restart = function () {
+    basketball.red = false;
     basketball.startTime = basketball.variables.startTime;
    };
    $scope.score = function (team, point) {

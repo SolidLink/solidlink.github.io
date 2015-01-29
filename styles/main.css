@@ -5,6 +5,7 @@ html, body, #top {
 }
 #top {
    position: relative;
+   min-height: 600px;
 }
 .header {
    margin-bottom: 40px;
@@ -253,11 +254,17 @@ label[for='toggle-all'] {
 #basketball .score {
    font-size: 100px;
 }
-@media (max-width: 765px) {
+@media (max-width: 768px) {
    #menu {
       position: relative;
       bottom: 0px;
    }
+   #time {
+      font-size: 100px;
+   }
+}
+.red {
+   color: red !important;
 }
 .bold {
    font-weight: bold;
